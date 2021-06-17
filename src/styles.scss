@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import "/src/app/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+div,
+header,
+section,
+main,
+footer,
+ul,
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  text-decoration: none;
+  color: #000;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+body {
+  background: $main-bg-color;
+}
