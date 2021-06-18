@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   faUserPlus,
   faToggleOff,
@@ -7,17 +7,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
-export class NavBarComponent implements OnInit {
+export class HeaderComponent {
   faUserPlus = faUserPlus;
   faToggleOff = faToggleOff;
   faShoppingCart = faShoppingCart;
   faUserShield = faUserShield;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
