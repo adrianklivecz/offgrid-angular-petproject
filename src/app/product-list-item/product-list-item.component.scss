@@ -1,41 +1,39 @@
-.card {
+.item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 20rem;
   width: 80%;
   padding: 0.5rem;
-  border: var(--card-border-light);
+  border: 1px solid grey;
   border-radius: 3px;
   box-shadow: 1px 1px 2px #808080;
   background-color: #f5f5f5;
 
-  .card__img {
+  .item__img {
     display: block;
     margin: auto;
     height: 10rem;
     max-width: 100%;
   }
 
-  .card__header {
+  .item__header {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
   }
 
-  .card__name {
+  .item__name {
     font-size: 1.75rem;
   }
 
-  .card__price {
+  .item__price {
     font-size: 1.25rem;
   }
 
-  .card__button {
+  .item__button {
     border-radius: 3px;
     font-size: 1.25rem;
-    background: var(--submit-btn-background);
-    color: var(--main-bg-color);
   }
 }
