@@ -1,0 +1,12 @@
+@import "../variables";
+
+.back-to-top-arrow {
+  position: fixed;
+  bottom: 6rem;
+  right: 4rem;
+  font-size: 4rem;
+
+  a {
+    color: $logo-color;
+  }
+}
