@@ -1,3 +1,5 @@
+@import "../variables";
+
 .item {
   display: flex;
   flex-direction: column;
@@ -32,8 +34,10 @@
     font-size: 1.25rem;
   }
 
-  .item__button {
+  .item__cart-btn {
     border-radius: 3px;
     font-size: 1.25rem;
+    background: $submit-btn-background;
+    color: $main-bg-color;
   }
 }
