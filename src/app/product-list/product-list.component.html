@@ -1,12 +1,5 @@
 <section class="product-list">
     <div class="product-list__items-container">
-        <app-product-list-item></app-product-list-item>
-        <app-product-list-item></app-product-list-item>
-        <app-product-list-item></app-product-list-item>
-        <app-product-list-item></app-product-list-item>
-        <app-product-list-item></app-product-list-item>
-        <app-product-list-item></app-product-list-item>
-        <app-product-list-item></app-product-list-item>
-        <app-product-list-item></app-product-list-item>
+        <app-product-list-item *ngFor="let number of numbers"></app-product-list-item>
     </div>
 </section>
