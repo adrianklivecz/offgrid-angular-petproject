@@ -1,0 +1,31 @@
+<header class="main-header">
+    <div class="main-header__logo-container">
+        <a href="index.html">
+            <img class="logo" src="assets/images/logo_transparent.png" alt="OffGrid Store" />
+        </a>
+    </div>
+    <nav class="main-header__navbar">
+        <ul class="navbar__buttons-container">
+            <li class="navbar__button"><a routerLink="#">Home</a></li>
+            <li class="navbar__button"><a routerLink="#">Orders</a></li>
+            <li class="navbar__button">
+                <fa-icon [icon]="faUserPlus"></fa-icon>
+            </li>
+            <li class="navbar__button">
+                <a routerLink="#">
+                    <fa-icon [icon]="faUserShield"></fa-icon>
+                </a>
+            </li>
+            <li class="navbar__button">
+                <a routerLink="#">
+                    <fa-icon [icon]="faToggleOff"></fa-icon>
+                </a>
+            </li>
+            <li class="navbar__button">
+                <a routerLink="#">
+                    <fa-icon [icon]="faShoppingCart"></fa-icon>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
