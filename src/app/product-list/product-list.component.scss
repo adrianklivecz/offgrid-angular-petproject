@@ -1,7 +1,7 @@
 .product-list {
   padding: 4rem 0 4rem 0;
 
-  .product-list__items-container {
+  &__items-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     grid-gap: 20px;
