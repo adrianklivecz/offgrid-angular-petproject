@@ -11,6 +11,7 @@
   border-radius: 3px;
   box-shadow: 1px 1px 2px #808080;
   background-color: #f5f5f5;
+  transition: 0.5s;
 
   &__img {
     display: block;
@@ -39,5 +40,9 @@
     font-size: 1.25rem;
     background: $submit-btn-background;
     color: $main-bg-color;
+  }
+
+  &:hover {
+    background-color: #dad8d8;
   }
 }
