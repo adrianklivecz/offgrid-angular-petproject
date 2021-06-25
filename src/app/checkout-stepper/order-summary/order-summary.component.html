@@ -1,58 +1,49 @@
-<main class="checkout">
-    <ul class="checkout__nav">
-        <li class="nav__address"><a href="checkout-page.html">Delivery Address</a></li>
-        <li class="nav__shipping"><a href="shipping-method-form.html">Shipping Method</a></li>
-        <li class="nav__payment"><a href="payment-method-form.html">Payment Method</a></li>
-        <li class="nav__summary selected"><a href="order-summary.html">Order Summary</a></li>
-    </ul>
-
-    <div class="checkout__order">
-        <section class="order__summary">
-            <ul class="summary__items">
-                <li class="summary__item">
-                    <p class="item__name">item 1 - Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Provident, cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Neque, ab.</p>
-                    <div class="item__details">
-                        <p class="quantity">*Quantity*</p>
-                        <p class="price">$1000</p>
-                    </div>
-                </li>
-                <li class="summary__item">
-                    <p class="item__name">item 2 - Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Voluptate, minus.</p>
-                    <div class="item__details">
-                        <p class="quantity">*Quantity*</p>
-                        <p class="price">$1000</p>
-                    </div>
-                </li>
-                <li class="summary__item">
-                    <p class="item__name">item 3</p>
-                    <div class="item__details">
-                        <p class="quantity">*Quantity*</p>
-                        <p class="price">$1000</p>
-                    </div>
-                </li>
-                <li class="summary__item">
-                    <p class="item__name">item 4 - Lorem ipsum dolor sit amet.</p>
-                    <div class="item__details">
-                        <p class="quantity">*Quantity*</p>
-                        <p class="price">$1000</p>
-                    </div>
-                </li>
-            </ul>
-            <p class="summary__total">Total: $4000</p>
-            <p class="summary__delivery-address"><span>Delivery address:</span> xxxxxxxxx</p>
-            <p class="summary__payment"><span>Payment method:</span> xxxxxxxxx</p>
-            <p class="summary__shipping"><span>Shipping method:</span> xxxxxxxxx</p>
-            <form class="summary__consent">
-                <input type="checkbox" id="order-consent" name="order-consent" value="Consent">
-                <label for="order-consent">I have verified the order's details.</label>
-            </form>
-        </section>
-        <div class="order__nav-buttons checkout-nav-buttons">
-            <a class="back-btn pointer" routerLink="/checkout/payment-method">Back</a>
-            <a class="order-submit pointer" routerLink="/home">Send me the goods!</a>
-        </div>
+<div class="checkout__order">
+    <section class="order__summary">
+        <ul class="summary__items">
+            <li class="summary__item">
+                <p class="item__name">item 1 - Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Provident, cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Neque, ab.</p>
+                <div class="item__details">
+                    <p class="quantity">*Quantity*</p>
+                    <p class="price">$1000</p>
+                </div>
+            </li>
+            <li class="summary__item">
+                <p class="item__name">item 2 - Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Voluptate, minus.</p>
+                <div class="item__details">
+                    <p class="quantity">*Quantity*</p>
+                    <p class="price">$1000</p>
+                </div>
+            </li>
+            <li class="summary__item">
+                <p class="item__name">item 3</p>
+                <div class="item__details">
+                    <p class="quantity">*Quantity*</p>
+                    <p class="price">$1000</p>
+                </div>
+            </li>
+            <li class="summary__item">
+                <p class="item__name">item 4 - Lorem ipsum dolor sit amet.</p>
+                <div class="item__details">
+                    <p class="quantity">*Quantity*</p>
+                    <p class="price">$1000</p>
+                </div>
+            </li>
+        </ul>
+        <p class="summary__total">Total: $4000</p>
+        <p class="summary__delivery-address"><span>Delivery address:</span> xxxxxxxxx</p>
+        <p class="summary__payment"><span>Payment method:</span> xxxxxxxxx</p>
+        <p class="summary__shipping"><span>Shipping method:</span> xxxxxxxxx</p>
+        <form class="summary__consent">
+            <input type="checkbox" id="order-consent" name="order-consent" value="Consent">
+            <label for="order-consent">I have verified the order's details.</label>
+        </form>
+    </section>
+    <div class="order__nav-buttons checkout-nav-buttons">
+        <a class="back-btn pointer" routerLink="/checkout/payment-method">Back</a>
+        <a class="order-submit pointer" routerLink="/home">Send me the goods!</a>
     </div>
-</main>
+</div>

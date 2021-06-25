@@ -1,28 +1,20 @@
-<main class="checkout">
-    <ul class="checkout__nav">
-        <li class="nav__address"><a href="checkout-page.html">Delivery Address</a></li>
-        <li class="nav__shipping selected"><a href="shipping-method-form.html">Shipping Method</a></li>
-        <li class="nav__payment"><a href="payment-method-form.html">Payment Method</a></li>
-        <li class="nav__summary"><a href="order-summary.html">Order Summary</a></li>
-    </ul>
-    <form class="checkout__form">
-        <div class="form__standard-shipping">
-            <input type="radio" id="standard-shipping" name="shipping-method" value="standard-shipping" checked>
-            <label for='standard-shipping' class="pointer">Standard Shipping - Post Office (3-5
-                days)</label>
-        </div>
-        <div class="form__fan-shipping">
-            <input type="radio" id="fan-shipping" name="shipping-method" value="fan-shipping">
-            <label for='fan-shipping' class="pointer">Expedited Shipping - Fan Courier (2-3
-                days)</label>
-        </div>
-        <div class="form__ups-shipping">
-            <input type="radio" id="ups-shipping" name="shipping-method" value="ups-shipping">
-            <label for='ups-shipping' class="pointer">Expedited Shipping - UPS (1-2 days)</label>
-        </div>
-        <div class="form__nav-buttons checkout-nav-buttons">
-            <a class="back-btn pointer" routerLink="/checkout/delivery-address">Back</a>
-            <a class="next-btn pointer" routerLink="/checkout/payment-method">Next</a>
-        </div>
-    </form>
-</main>
+<form class="checkout__form">
+    <div class="form__standard-shipping">
+        <input type="radio" id="standard-shipping" name="shipping-method" value="standard-shipping" checked>
+        <label for='standard-shipping' class="pointer">Standard Shipping - Post Office (3-5
+            days)</label>
+    </div>
+    <div class="form__fan-shipping">
+        <input type="radio" id="fan-shipping" name="shipping-method" value="fan-shipping">
+        <label for='fan-shipping' class="pointer">Expedited Shipping - Fan Courier (2-3
+            days)</label>
+    </div>
+    <div class="form__ups-shipping">
+        <input type="radio" id="ups-shipping" name="shipping-method" value="ups-shipping">
+        <label for='ups-shipping' class="pointer">Expedited Shipping - UPS (1-2 days)</label>
+    </div>
+    <div class="form__nav-buttons checkout-nav-buttons">
+        <a class="back-btn pointer" routerLink="/checkout">Back</a>
+        <a class="next-btn pointer" routerLink="/checkout/payment-method">Next</a>
+    </div>
+</form>

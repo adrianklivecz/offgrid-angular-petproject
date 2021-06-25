@@ -13,6 +13,7 @@ import { DeliveryAddressComponent } from './checkout-stepper/delivery-address/de
 import { ShippingMethodComponent } from './checkout-stepper/shipping-method/shipping-method.component';
 import { PaymentMethodComponent } from './checkout-stepper/payment-method/payment-method.component';
 import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-summary.component';
+import { CheckoutStepperComponent } from './checkout-stepper/checkout-stepper.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-su
     ShippingMethodComponent,
     PaymentMethodComponent,
     OrderSummaryComponent,
+    CheckoutStepperComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],

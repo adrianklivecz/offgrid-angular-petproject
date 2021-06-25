@@ -1,14 +1,24 @@
 @import "../../variables";
 @import "../checkout-stepper-common";
 
-.checkout__form .form__name,
-.checkout__form .form__phone,
-.checkout__form .form__country,
-.checkout__form .form__county,
-.checkout__form .form__city,
-.checkout__form .form__address,
-.checkout__form .form__postal-code {
-  height: 1.5rem;
-  max-width: 35rem;
-  width: 100%;
+.checkout__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 35rem;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  border: $card-border-light;
+
+  .form__name,
+  .form__phone,
+  .form__country,
+  .form__county,
+  .form__city,
+  .form__address,
+  .form__postal-code {
+    height: 1.5rem;
+    max-width: 35rem;
+    width: 100%;
+  }
 }
