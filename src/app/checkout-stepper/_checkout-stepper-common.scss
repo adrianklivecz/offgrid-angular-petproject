@@ -1,36 +1,14 @@
 @import "../variables";
 
-.checkout {
-  max-width: 70rem;
-  width: 100%;
-  margin: 0 auto;
+.checkout__form,
+.checkout__order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 35rem;
+  gap: 1.5rem;
   padding: 2rem 1rem;
-
-  .checkout__nav {
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 1rem;
-
-    .nav__address,
-    .nav__shipping,
-    .nav__payment,
-    .nav__summary {
-      flex: 1 10rem;
-      border: $card-border-light;
-      text-align: center;
-    }
-  }
-
-  .checkout__form,
-  .checkout__order {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 35rem;
-    gap: 1.5rem;
-    padding: 2rem 1rem;
-    border: $card-border-light;
-  }
+  border: $card-border-light;
 }
 
 .checkout-nav-buttons {
@@ -54,10 +32,4 @@
 .next-btn:hover,
 .back-btn:hover {
   background-color: $logo-color;
-}
-
-.selected {
-  background: $logo-color;
-  font-weight: bold;
-  color: #fff;
 }

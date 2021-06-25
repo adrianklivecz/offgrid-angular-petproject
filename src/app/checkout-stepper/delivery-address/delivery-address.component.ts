@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-delivery-address',
   templateUrl: './delivery-address.component.html',
-  styleUrls: ['./delivery-address.component.scss']
+  styleUrls: ['./delivery-address.component.scss'],
 })
-export class DeliveryAddressComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class DeliveryAddressComponent {}

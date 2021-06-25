@@ -1,14 +1,5 @@
+@import "../../variables";
 @import "../checkout-stepper-common";
-
-.checkout__order {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 35rem;
-  gap: 1.5rem;
-  padding: 2rem 1rem;
-  border: $card-border-light;
-}
 
 .order__summary {
   display: flex;

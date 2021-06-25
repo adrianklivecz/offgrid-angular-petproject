@@ -20,40 +20,6 @@
       text-align: center;
     }
   }
-
-  .checkout__form,
-  .checkout__order {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 35rem;
-    gap: 1.5rem;
-    padding: 2rem 1rem;
-    border: $card-border-light;
-  }
-}
-
-.checkout-nav-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.next-btn,
-.back-btn {
-  width: 7rem;
-  padding: 0 2rem;
-  border-radius: 3px;
-  font-size: 1.2rem;
-  background: $selected-bg-color;
-  color: #fff;
-  text-align: center;
-}
-
-.next-btn:hover,
-.back-btn:hover {
-  background-color: $logo-color;
 }
 
 .selected {
