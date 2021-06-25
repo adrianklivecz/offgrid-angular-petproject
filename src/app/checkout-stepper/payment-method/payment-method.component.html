@@ -1,0 +1,26 @@
+<main class="checkout">
+    <ul class="checkout__nav">
+        <li class="nav__address"><a href="checkout-page.html">Delivery Address</a></li>
+        <li class="nav__shipping"><a href="shipping-method-form.html">Shipping Method</a></li>
+        <li class="nav__payment selected"><a href="payment-method-form.html">Payment Method</a></li>
+        <li class="nav__summary"><a href="order-summary.html">Order Summary</a></li>
+    </ul>
+    <form class="checkout__form">
+        <div class="form__cash-method">
+            <input type="radio" id="cash-method" name="payment-method" value="cash-method" checked>
+            <label for='cash-method' class="pointer">Cash - on delivery</label>
+        </div>
+        <div class="form__card-method">
+            <input type="radio" id="card-method" name="payment-method" value="card-method">
+            <label for='card-method' class="pointer">Credit card</label>
+        </div>
+        <div class="form__bank-method">
+            <input type="radio" id="bank-method" name="payment-method" value="bank-method">
+            <label for='bank-method' class="pointer">Bank transfer</label>
+        </div>
+        <div class="form__nav-buttons checkout-nav-buttons">
+            <a class="back-btn pointer" routerLink="/checkout/shipping-method">Back</a>
+            <a class="next-btn pointer" routerLink="/checkout/order-summary">Next</a>
+        </div>
+    </form>
+</main>

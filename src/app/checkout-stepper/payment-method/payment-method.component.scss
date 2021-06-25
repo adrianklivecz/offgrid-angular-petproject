@@ -1,0 +1,8 @@
+@import "../checkout-stepper-common";
+
+.form__cash-method,
+.form__card-method,
+.form__bank-method {
+  max-width: 10rem;
+  width: 100%;
+}

@@ -9,6 +9,10 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { SearchComponent } from './search/search.component';
 import { BackToTopArrowComponent } from './back-to-top-arrow/back-to-top-arrow.component';
+import { DeliveryAddressComponent } from './checkout-stepper/delivery-address/delivery-address.component';
+import { ShippingMethodComponent } from './checkout-stepper/shipping-method/shipping-method.component';
+import { PaymentMethodComponent } from './checkout-stepper/payment-method/payment-method.component';
+import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,10 @@ import { BackToTopArrowComponent } from './back-to-top-arrow/back-to-top-arrow.c
     ProductListItemComponent,
     SearchComponent,
     BackToTopArrowComponent,
+    DeliveryAddressComponent,
+    ShippingMethodComponent,
+    PaymentMethodComponent,
+    OrderSummaryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
