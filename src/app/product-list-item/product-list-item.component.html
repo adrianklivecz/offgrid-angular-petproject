@@ -1,19 +1,16 @@
-<div class="product-list__item">
-    <div class="item">
-        <div class="item__details">
-            <a routerLink="/product-details"> <img src="../../assets/images/logo_transparent.png"
-                    class="item__img" /></a>
-            <div class="item__header">
-                <p class="item__name">Item#</p>
-                <p class="item__price">Price: $300</p>
+<div class="product-list__items-container">
+    <div *ngFor="let product of products" class="product-list__item">
+        <div class="item">
+            <div class="item__details">
+                <a routerLink="/product-details"> <img src="../../assets/images/logo_transparent.png"
+                        class="item__img" /></a>
+                <div class="item__header">
+                    <p class="item__name">{{product.name}}</p>
+                    <p class="item__price">Price: ${{product.price}}</p>
+                </div>
+                <p class="item__description">{{product.description}}</p>
             </div>
-            <p class="item__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                exercitationem
-                quas quam rem eveniet
-                dolorem, nemo eaque atque rerum placeat. Lorem ipsum dolor sit amet consectetur, adipisicing
-                elit. Id
-                fugiat assumenda eius quisquam nostrum eveniet quae voluptatibus harum ullam veritatis.</p>
+            <button class="item__cart-btn pointer">Add to cart <i class="fa fa-shopping-cart"></i></button>
         </div>
-        <button class="item__cart-btn pointer">Add to cart <i class="fa fa-shopping-cart"></i></button>
     </div>
 </div>
