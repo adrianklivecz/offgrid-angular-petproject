@@ -1,0 +1,29 @@
+@import "../variables";
+
+.checkout {
+  max-width: 70rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  .checkout__nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+
+    .nav__address,
+    .nav__shipping,
+    .nav__payment,
+    .nav__summary {
+      flex: 1 10rem;
+      border: $card-border-light;
+      text-align: center;
+    }
+  }
+}
+
+.selected {
+  background: $logo-color;
+  font-weight: bold;
+  color: #fff;
+}

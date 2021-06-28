@@ -1,0 +1,16 @@
+@import "../../variables";
+@import "../checkout-stepper-common";
+
+.checkout__form {
+  .form__name,
+  .form__phone,
+  .form__country,
+  .form__county,
+  .form__city,
+  .form__address,
+  .form__postal-code {
+    height: 1.5rem;
+    max-width: 35rem;
+    width: 100%;
+  }
+}

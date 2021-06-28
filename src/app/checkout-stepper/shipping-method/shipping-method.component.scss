@@ -1,0 +1,10 @@
+@import "../checkout-stepper-common";
+
+.checkout__form {
+  .form__standard-shipping,
+  .form__fan-shipping,
+  .form__ups-shipping {
+    max-width: 22rem;
+    width: 100%;
+  }
+}

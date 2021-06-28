@@ -10,6 +10,11 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import { SearchComponent } from './search/search.component';
 import { BackToTopArrowComponent } from './back-to-top-arrow/back-to-top-arrow.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CheckoutStepperComponent } from './checkout-stepper/checkout-stepper.component';
+import { DeliveryAddressComponent } from './checkout-stepper/delivery-address/delivery-address.component';
+import { ShippingMethodComponent } from './checkout-stepper/shipping-method/shipping-method.component';
+import { PaymentMethodComponent } from './checkout-stepper/payment-method/payment-method.component';
+import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,11 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     SearchComponent,
     BackToTopArrowComponent,
     ProductDetailsComponent,
+    CheckoutStepperComponent,
+    DeliveryAddressComponent,
+    ShippingMethodComponent,
+    PaymentMethodComponent,
+    OrderSummaryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],

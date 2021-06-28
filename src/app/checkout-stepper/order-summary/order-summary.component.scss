@@ -1,0 +1,50 @@
+@import "../../variables";
+@import "../checkout-stepper-common";
+
+.order__summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary__total {
+  align-self: flex-end;
+}
+
+.summary__total,
+.summary__delivery-address span,
+.summary__payment span,
+.summary__shipping span {
+  font-weight: bold;
+}
+
+.summary__item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 0.5px solid $selected-bg-color;
+
+  .item__details {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .item__name {
+    flex: 1 30rem;
+  }
+}
+
+.summary__consent {
+  align-self: center;
+}
+
+.order__nav-buttons {
+  .order-submit {
+    padding: 0 1rem;
+    border-radius: 3px;
+    font-size: 1.25rem;
+    background: $submit-btn-background;
+    color: $main-bg-color;
+  }
+}
