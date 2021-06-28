@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { SearchComponent } from './search/search.component';
 import { BackToTopArrowComponent } from './back-to-top-arrow/back-to-top-arrow.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BackToTopArrowComponent } from './back-to-top-arrow/back-to-top-arrow.c
     ProductListItemComponent,
     SearchComponent,
     BackToTopArrowComponent,
+    ProductDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
