@@ -1,16 +1,11 @@
-<div class="product-list__items-container">
-    <div *ngFor="let product of products" class="product-list__item">
-        <div class="item">
-            <div class="item__details">
-                <a routerLink="/product-details"> <img src="../../assets/images/logo_transparent.png"
-                        class="item__img" /></a>
-                <div class="item__header">
-                    <p class="item__name">{{product.name}}</p>
-                    <p class="item__price">Price: ${{product.price}}</p>
-                </div>
-                <p class="item__description">{{product.description}}</p>
-            </div>
-            <button class="item__cart-btn pointer">Add to cart <i class="fa fa-shopping-cart"></i></button>
+<div class="item" *ngIf="productListItem">
+    <div class="item__details">
+        <a routerLink="/product-details"> <img src="../../assets/images/logo_transparent.png" class="item__img" /></a>
+        <div class="item__header">
+            <p class="item__name">{{productListItem.name}}</p>
+            <p class="item__price">Price: ${{productListItem.price}}</p>
         </div>
+        <p class="item__description">{{productListItem.description}}</p>
     </div>
+    <button class="item__cart-btn pointer">Add to cart <i class="fa fa-shopping-cart"></i></button>
 </div>
