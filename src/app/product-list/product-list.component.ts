@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,17 +10,18 @@ import { Product } from '../Product';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
+  constructor(private productService: ProductService) {}
+
   ngOnInit() {
-    this.populateProductList();
+    this.fetchProducts();
   }
 
-  populateProductList() {
-    fetch('http://localhost:8080/products', {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((products) =>
-        products.map((element: Product) => this.products.push(element))
-      );
+  fetchProducts() {
+    const products = this.productService
+      .populateProductList()
+      .then((fetchedProducts: any) => {
+        this.products = fetchedProducts;
+      });
+    return products;
   }
 }

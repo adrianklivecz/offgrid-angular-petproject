@@ -1,9 +1,11 @@
 <div class="item" *ngIf="productListItem">
     <div class="item__details">
-        <a routerLink="/product-details"> <img src="../../assets/images/logo_transparent.png" class="item__img" /></a>
+        <a routerLink="/product-details"> <img *ngIf="productListItem.images[0]"
+                src="{{productListItem.images[0].path}}" class="item__img" /></a>
         <div class="item__header">
             <p class="item__name">{{productListItem.name}}</p>
-            <p class="item__price">Price: ${{productListItem.price}}</p>
+            <p class="item__price">Price: <span>${{productListItem.price}}</span></p>
+            <p class="item__stock">Stock: <span>{{productListItem.nrOnStock}} pcs</span></p>
         </div>
         <p class="item__description">{{productListItem.description}}</p>
     </div>

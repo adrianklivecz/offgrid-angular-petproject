@@ -30,11 +30,22 @@
   }
 
   &__name {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
   }
 
   &__price {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__stock {
+    span {
+      font-weight: bold;
+    }
   }
 
   &__cart-btn {
