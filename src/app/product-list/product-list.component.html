@@ -1,7 +1,8 @@
 <app-search></app-search>
 <section class="product-list">
     <div class="product-list__items-container">
-        <app-product-list-item *ngFor="let product of products" [productListItem]='product'></app-product-list-item>
+        <app-product-list-item *ngFor="let product of products$ | async" [productListItem]='product'>
+        </app-product-list-item>
     </div>
 </section>
 <app-back-to-top-arrow></app-back-to-top-arrow>
