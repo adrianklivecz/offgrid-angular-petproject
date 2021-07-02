@@ -12,13 +12,21 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
-    return this.http
-      .get<any>('http://localhost:8080/products', {})
-      .pipe(
-        map((results) =>
-          results.map((rawProduct: any) => this.convertProducts(rawProduct))
-        )
-      );
+    return this.http.get<any>('http://localhost:8080/products', {}).pipe(
+      map((results) => {
+        return results.map((rawProduct: any) =>
+          this.convertProducts(rawProduct)
+        );
+      })
+    );
+  }
+
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<any>('http://localhost:8080/products/' + id, {}).pipe(
+      map((result) => {
+        return this.convertProducts(result);
+      })
+    );
   }
 
   convertProducts(product: any) {

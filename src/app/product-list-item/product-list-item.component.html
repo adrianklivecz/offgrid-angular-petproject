@@ -1,7 +1,7 @@
 <div class="item" *ngIf="productListItem">
     <div class="item__details">
-        <a routerLink="/product-details"> <img src="{{productListItem.mainImg}}" alt="product-image"
-                class="item__img" /></a>
+        <a routerLink="/product-details/{{productListItem.id}}"> <img src="{{productListItem.mainImg}}"
+                alt="product-image" class="item__img" /></a>
         <div class="item__header">
             <p class="item__name">{{productListItem.name}}</p>
             <p class="item__price">Price: <span>${{productListItem.price}}</span></p>
