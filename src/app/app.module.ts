@@ -15,6 +15,7 @@ import { DeliveryAddressComponent } from './checkout-stepper/delivery-address/de
 import { ShippingMethodComponent } from './checkout-stepper/shipping-method/shipping-method.component';
 import { PaymentMethodComponent } from './checkout-stepper/payment-method/payment-method.component';
 import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-summary.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,12 @@ import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-su
     PaymentMethodComponent,
     OrderSummaryComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

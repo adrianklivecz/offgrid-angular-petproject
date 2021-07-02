@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import { Product } from '../Product';
+import { ProductService } from '../product.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
-  numbers = [0,1,2,3,4,5,6,7,8];
+  products$: Observable<Product[]>;
+
+  constructor(private productService: ProductService) {
+    this.products$ = this.productService.getProducts();
+  }
 }

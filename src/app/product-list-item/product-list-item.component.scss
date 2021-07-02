@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 20rem;
+  height: 100%;
   width: 80%;
   padding: 0.5rem;
   border: 1px solid grey;
@@ -22,17 +23,30 @@
 
   &__header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
   }
 
   &__name {
-    font-size: 1.75rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
   }
 
   &__price {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__stock {
+    span {
+      font-weight: bold;
+    }
   }
 
   &__cart-btn {
