@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { faThinkPeaks } from '@fortawesome/free-brands-svg-icons';
 
 import { Product } from '../Product';
 import { ProductService } from '../product.service';
@@ -17,7 +18,8 @@ export class ProductDetailsComponent implements OnInit {
 
   product: Product | undefined;
   productImages: any;
-  pcsOnStock: any;
+  mainImg: string = '';
+  imgId: string = '';
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -25,9 +27,13 @@ export class ProductDetailsComponent implements OnInit {
       this.productService.getProductById(id).subscribe((product: Product) => {
         this.productImages = product.media;
         this.product = product;
-        this.pcsOnStock = product.stock;
-        console.log(this.pcsOnStock);
+        this.mainImg = product.mainImg;
       });
     }
+  }
+
+  selectImg(path: string, id: any) {
+    this.mainImg = path;
+    this.imgId = id;
   }
 }

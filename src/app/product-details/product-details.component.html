@@ -1,12 +1,13 @@
 <div class="product" *ngIf="product">
     <section class="product__images">
-        <img src="{{product.mainImg}}" class="images__main-img" />
+        <img [src]="mainImg" class="images__main-img" />
         <ul *ngIf="product.media" class="images__gallery-thumbnails">
-            <li *ngFor="let image of productImages"><img src="{{image.path}}" class="thumbnail" />
+            <li *ngFor="let image of productImages"><img (click)="selectImg(image.path, image.id)" src="{{image.path}}"
+                    [ngClass]="{'thumbnail': true, 'selected': imgId === image.id }">
             </li>
         </ul>
     </section>
-    <section class="product__details">
+    <section class=" product__details">
         <p class="details__product-name">{{product.name}}</p>
         <p class="details__product-price">Price: ${{product.price}}</p>
         <p class="details__product-description">{{product.description}}</p>
