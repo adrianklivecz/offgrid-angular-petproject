@@ -8,4 +8,8 @@ import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 })
 export class BackToTopArrowComponent {
   faArrowAltCircleUp = faArrowAltCircleUp;
+
+  toTop() {
+    document.querySelector('.main-header')?.scrollIntoView();
+  }
 }

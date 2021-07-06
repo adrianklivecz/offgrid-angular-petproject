@@ -5,17 +5,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 35rem;
+  min-height: 32rem;
   gap: 1.5rem;
   padding: 2rem 1rem;
   border: $card-border-light;
 }
 
-.checkout-nav-buttons {
+.checkout__nav-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .next-btn,
@@ -23,7 +24,7 @@
   width: 7rem;
   padding: 0 2rem;
   border-radius: 3px;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   background: $selected-bg-color;
   color: #fff;
   text-align: center;

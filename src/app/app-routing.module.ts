@@ -17,8 +17,10 @@ const routes: Routes = [
     path: 'checkout',
     component: CheckoutStepperComponent,
     children: [
+      { path: '', redirectTo: '/checkout/delivery-address', pathMatch: 'full' },
+
       {
-        path: '',
+        path: 'delivery-address',
         component: DeliveryAddressComponent,
       },
       { path: 'shipping-method', component: ShippingMethodComponent },
