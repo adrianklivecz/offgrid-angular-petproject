@@ -2,8 +2,8 @@
     <section class="product__images">
         <img [src]="mainImg" class="images__main-img" />
         <ul *ngIf="product.media" class="images__gallery-thumbnails">
-            <li *ngFor="let image of productImages"><img (click)="selectImg(image.path, image.id)" src="{{image.path}}"
-                    [ngClass]="{'thumbnail': true, 'selected': imgId === image.id }">
+            <li *ngFor="let image of productImages"><img (click)="selectImg(image.path)" src="{{image.path}}"
+                    [ngClass]="{'thumbnail': true, 'selected': mainImg === image.path }">
             </li>
         </ul>
     </section>
