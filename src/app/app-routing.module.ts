@@ -12,13 +12,15 @@ import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-su
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: ProductListComponent },
-  { path: 'product-details', component: ProductDetailsComponent },
+  { path: 'product-details/:id', component: ProductDetailsComponent },
   {
     path: 'checkout',
     component: CheckoutStepperComponent,
     children: [
+      { path: '', redirectTo: '/checkout/delivery-address', pathMatch: 'full' },
+
       {
-        path: '',
+        path: 'delivery-address',
         component: DeliveryAddressComponent,
       },
       { path: 'shipping-method', component: ShippingMethodComponent },

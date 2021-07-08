@@ -1,4 +1,5 @@
 @import "../variables";
+@import "./checkout-stepper-common";
 
 .checkout {
   max-width: 70rem;
@@ -26,4 +27,17 @@
   background: $logo-color;
   font-weight: bold;
   color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.order-submit {
+  padding: 0 1rem;
+  width: auto;
+  border-radius: 3px;
+  font-size: 1.25rem;
+  background: $submit-btn-background;
+  color: $main-bg-color;
 }

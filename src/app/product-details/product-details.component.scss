@@ -18,7 +18,7 @@
     gap: 1.5rem;
 
     .quantity {
-      width: 2rem;
+      width: 3rem;
     }
 
     .cart-button {
@@ -34,7 +34,7 @@
 
 .images {
   &__main-img {
-    max-width: 25rem;
+    max-width: 20rem;
     width: 100%;
   }
 
@@ -47,6 +47,13 @@
     .thumbnail {
       width: 3rem;
       height: 3rem;
+      cursor: pointer;
+      &:hover {
+        border: 1px solid #000;
+      }
+    }
+    .selected {
+      box-shadow: 1px 1px 2px #808080;
       border: 1px solid #000;
     }
   }
@@ -55,12 +62,12 @@
 .details {
   &__product-name {
     margin-top: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: $logo-color;
   }
 
   &__product-price {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   &__product-description {

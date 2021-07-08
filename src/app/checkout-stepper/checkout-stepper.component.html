@@ -1,9 +1,12 @@
 <div class="checkout">
     <ul class="checkout__nav">
-        <li class="nav__address">Delivery Address</li>
-        <li class="nav__shipping">Shipping Method</li>
-        <li class="nav__payment">Payment Method</li>
-        <li class="nav__summary">Order Summary</li>
+        <li *ngFor="let step of checkoutSteps" [className]="step.class + ' checkout-step'">
+            {{step.name}}
+        </li>
     </ul>
     <router-outlet></router-outlet>
+    <div class="checkout__nav-buttons">
+        <a class="back-btn pointer" (click)="previousStep()">Back</a>
+        <a class="next-btn pointer" (click)="nextStep()">Next</a>
+    </div>
 </div>
