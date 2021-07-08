@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,4 +8,20 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class SearchComponent {
   faSearch = faSearch;
+  searchTerm: string = '';
+  hide: boolean = true;
+
+  @Output() search = new EventEmitter();
+
+  searchProduct() {
+    this.search.emit(this.searchTerm);
+  }
+
+  showResetBtn() {
+    this.hide = false;
+  }
+
+  hideResetBtn() {
+    this.hide = true;
+  }
 }
