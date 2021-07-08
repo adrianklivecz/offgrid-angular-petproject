@@ -1,15 +1,17 @@
 <section class="search-bar">
-    <form class="search-bar__form">
+    <form class="search-bar__form" (ngSubmit)='searchProduct()'>
         <div class="search-bar__label">
             <label for="search-bar__input">Gear up:</label>
         </div>
         <div class="search-bar__inputs-container">
-            <input type="text" name="search" placeholder="Search here" id="search-bar__input"
-                class="search-bar__input" />
-            <input type="reset" value="X" class="search-bar__reset-btn v-hidden pointer">
-            <span class="search-bar__submit-btn pointer">
+            <input [(ngModel)]="searchTerm" type="text" name="search" autocomplete="off" placeholder="Search here"
+                id="search-bar__input" class="search-bar__input" (keyup)="showResetBtn()" #box />
+            <input type="reset" value="X"
+                [ngClass]="{'search-bar__reset-btn' : true, 'pointer' : true, 'v-hidden': hide }"
+                (click)="hideResetBtn()">
+            <button type="submit" class="search-bar__submit-btn pointer">
                 <fa-icon [icon]="faSearch"></fa-icon>
-            </span>
+            </button>
         </div>
     </form>
 </section>

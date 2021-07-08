@@ -31,6 +31,7 @@
 
   &__submit-btn {
     margin: 0;
+    border: none;
     font-size: 1.5rem;
     color: $logo-color;
   }
@@ -38,4 +39,8 @@
   &__reset-btn {
     color: #b40d0d;
   }
+}
+
+.v-hidden {
+  visibility: hidden;
 }

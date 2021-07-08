@@ -1,5 +1,6 @@
-<app-search></app-search>
+<app-search (search)="searchProducts($event)"></app-search>
 <section class="product-list">
+    <h1 *ngIf="show" class="failed-search-message">No results!</h1>
     <div class="product-list__items-container">
         <app-product-list-item *ngFor="let product of products$ | async" [productListItem]='product'>
         </app-product-list-item>

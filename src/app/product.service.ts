@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Product } from './Product';
 
@@ -27,6 +27,18 @@ export class ProductService {
         return this.convertProducts(result);
       })
     );
+  }
+
+  getSearchedProducts(searchItem: string): Observable<Product[]> {
+    return this.http
+      .post<any>('http://localhost:8080/search', { name: searchItem })
+      .pipe(
+        map((results) => {
+          return results.map((rawProduct: any) =>
+            this.convertProducts(rawProduct)
+          );
+        })
+      );
   }
 
   convertProducts(product: any) {
