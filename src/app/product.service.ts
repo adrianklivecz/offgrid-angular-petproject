@@ -53,4 +53,19 @@ export class ProductService {
     };
     return convertedProduct;
   }
+
+  registerUser() {
+    const body = {
+      email: 'john@doess2.com',
+      firstName: 'John',
+      lastName: 'Doe',
+      password: 'asjds12345w',
+    };
+    return this.http.post<any>('http://localhost:8080/customer', body).pipe(
+      map((results) => {
+        console.log(results);
+        return results;
+      })
+    );
+  }
 }

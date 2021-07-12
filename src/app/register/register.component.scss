@@ -1,0 +1,132 @@
+@import "../variables";
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.register h1 {
+  color: $logo-color;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  max-width: 60rem;
+  width: 100%;
+}
+
+.register__form input,
+.register__form select {
+  height: 1.5rem;
+}
+
+.form__consent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form__user-details,
+.form__login-credentials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 25rem;
+  width: 100%;
+}
+
+.form__user-details *,
+.form__login-credentials * {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.user-details__first-name,
+.user-details__last-name,
+.user-details__city,
+.user-details__street,
+.user-details__zipcode,
+.login-credentials__email,
+.login-credentials__password,
+.login-credentials__verified-password {
+  position: relative;
+}
+
+.animation-label {
+  position: absolute;
+  left: 0.3rem;
+  top: 50%;
+  font-size: 0.9rem;
+  font-style: italic;
+  transform: translateY(-50%);
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+}
+
+.user-details__first-name input:focus + label,
+.user-details__last-name input:focus + label,
+.user-details__city input:focus + label,
+.user-details__street input:focus + label,
+.user-details__zipcode input:focus + label,
+.login-credentials__email input:focus + label,
+.login-credentials__password input:focus + label,
+.login-credentials__verified-password input:focus + label,
+.user-details__first-name input:valid + label,
+.user-details__last-name input:valid + label,
+.user-details__city input:valid + label,
+.user-details__street input:valid + label,
+.user-details__zipcode input:valid + label,
+.login-credentials__email input:valid + label,
+.login-credentials__password input:valid + label,
+.login-credentials__verified-password input:valid + label {
+  top: -0.5rem;
+  font-size: 0.75rem;
+  color: grey;
+}
+
+.user-details__salutation label,
+.user-details__country label {
+  padding-left: 0.3rem;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: grey;
+}
+
+.salutation,
+.country {
+  padding: 0.125rem;
+}
+
+.submit-button {
+  padding: 0.5rem;
+  width: 10rem;
+  border-radius: 3px;
+  font-size: 1.25rem;
+  text-align: center;
+  background: $submit-btn-background;
+  color: $main-bg-color;
+}
+
+#order-consent {
+  width: 1.3rem;
+}
+
+.form__login-redirect {
+  font-size: 1.2rem;
+
+  span a {
+    color: $logo-color;
+    font-weight: bold;
+  }
+}

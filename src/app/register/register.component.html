@@ -1,0 +1,35 @@
+<main class="register">
+    <h1 class="register__form-title">Create Account</h1>
+    <form name="register__form" class="register__form">
+        <div class="form__user-details">
+            <div class="user-details__first-name">
+                <input autocomplete="off" name="first-name" type="text" class="first-name" required>
+                <label class="animation-label">First Name</label>
+            </div>
+            <div class="user-details__last-name">
+                <input autocomplete="off" name="last-name" type="text" class="last-name" required>
+                <label class="animation-label">Last Name</label>
+            </div>
+            <div class="login-credentials__email">
+                <input autocomplete="off" name="email" type="text" class="email" required>
+                <label for="Email" class="animation-label">Email</label>
+            </div>
+            <div class="login-credentials__password">
+                <input name="password" type="password" class="password" required>
+                <label for="Password" class="animation-label">Password</label>
+            </div>
+            <div class="login-credentials__verified-password">
+                <input name="verified-password" type="password" class="verified-password" required>
+                <label for="Password" class="animation-label">Re-enter the password</label>
+            </div>
+        </div>
+        <div class="form__consent">
+            <input type="checkbox" id="order-consent" name="order-consent" value="Consent">
+            <label for="order-consent">I agree to send my personal data to OffGrid.</label>
+        </div>
+        <button class="submit-button pointer" type="submit">Register</button>
+
+        <p class="form__login-redirect" (click)="test()">Already have an account? <span><a
+                    routerLink="#">Sign-In</a></span></p>
+    </form>
+</main>
