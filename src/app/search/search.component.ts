@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-search',
@@ -8,8 +8,9 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class SearchComponent {
   faSearch = faSearch;
+  faTimes = faTimes;
   searchTerm: string = '';
-  hide: boolean = true;
+  show: boolean = false;
 
   @Output() search = new EventEmitter();
 
@@ -17,11 +18,7 @@ export class SearchComponent {
     this.search.emit(this.searchTerm);
   }
 
-  showResetBtn() {
-    this.hide = false;
-  }
-
-  hideResetBtn() {
-    this.hide = true;
+  onTextChange(text: string) {
+    this.show = text?.length > 0 ? true : false;
   }
 }

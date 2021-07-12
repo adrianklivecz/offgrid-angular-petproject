@@ -21,23 +21,31 @@
     gap: 1em;
   }
 
-  &__input {
-    max-width: 20rem;
-    border-width: 0 0 1px 0;
-    outline: 0;
+  &__inputs {
+    border-bottom: 1px solid black;
+
+    .search-input {
+      max-width: 20rem;
+      border: none;
+      outline: 0;
+      background-color: transparent;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__reset-btn {
+    border: none;
     background-color: transparent;
+    color: #b40d0d;
     font-size: 1.1rem;
   }
 
   &__submit-btn {
     margin: 0;
     border: none;
-    font-size: 1.5rem;
+    background-color: transparent;
+    font-size: 1.2rem;
     color: $logo-color;
-  }
-
-  &__reset-btn {
-    color: #b40d0d;
   }
 }
 
