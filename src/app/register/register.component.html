@@ -1,35 +1,59 @@
-<main class="register">
+<div class="register">
     <h1 class="register__form-title">Create Account</h1>
-    <form name="register__form" class="register__form">
+    <form name="register__form" class="register__form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form__user-details">
             <div class="user-details__first-name">
-                <input autocomplete="off" name="first-name" type="text" class="first-name" required>
-                <label class="animation-label">First Name</label>
+                <input name="firstName" type="text" class="first-name" formControlName="firstName" autocomplete="off"
+                    required>
+                <label class="animation-label">First Name <span
+                        *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.hasError('required')"
+                        class="required">
+                        *required</span>
+                </label>
             </div>
             <div class="user-details__last-name">
-                <input autocomplete="off" name="last-name" type="text" class="last-name" required>
-                <label class="animation-label">Last Name</label>
+                <input name="lastName" type="text" class="last-name" formControlName="lastName" autocomplete="off"
+                    required>
+                <label class="animation-label">Last Name <span
+                        *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.hasError('required')"
+                        class="required">
+                        *required</span></label>
             </div>
-            <div class="login-credentials__email">
-                <input autocomplete="off" name="email" type="text" class="email" required>
-                <label for="Email" class="animation-label">Email</label>
+            <div class="user-details__email">
+                <input name="email" type="text" class="email" formControlName="email" autocomplete="off" required>
+                <label for="email" class="animation-label">Email
+                    <span *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')"
+                        class="required">
+                        *required</span>
+                    <span *ngIf="registerForm.get('email')?.dirty && emailValidator(registerForm.get('email'))"
+                        class="required"> *please use a valid e-mail format</span>
+                </label>
             </div>
-            <div class="login-credentials__password">
-                <input name="password" type="password" class="password" required>
-                <label for="Password" class="animation-label">Password</label>
+            <div class="user-details__password">
+                <input name="password" type="password" class="password" formControlName="password" required>
+                <label for="password" class="animation-label">Password <span
+                        *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.hasError('required')"
+                        class="required">
+                        *required</span>
+                    <span *ngIf="registerForm.get('password')?.errors?.minlength" class="required">
+                        *Password must be at least 8 characters long.</span>
+                </label>
             </div>
-            <div class="login-credentials__verified-password">
-                <input name="verified-password" type="password" class="verified-password" required>
-                <label for="Password" class="animation-label">Re-enter the password</label>
+            <div class="user-details__verified-password">
+                <input name="verifiedPassword" type="password" class="verified-password"
+                    formControlName="verifiedPassword" required>
+                <label for="verifiedPassword" class="animation-label">Re-enter the password <span
+                        *ngIf="registerForm.get('verifiedPassword')?.dirty && registerForm.get('password')?.value !== registerForm.get('verifiedPassword')?.value"
+                        class="required">
+                        *Password mismatch</span></label>
             </div>
         </div>
         <div class="form__consent">
-            <input type="checkbox" id="order-consent" name="order-consent" value="Consent">
-            <label for="order-consent">I agree to send my personal data to OffGrid.</label>
+            <input type="checkbox" id="register-consent" name="register-consent" (change)="checkBoxHandler()" required>
+            <label for="register-consent" [ngClass]="{'required': submitted && !consentCheckBox}">
+                I agree to send my personal data to OffGrid.</label>
         </div>
         <button class="submit-button pointer" type="submit">Register</button>
-
-        <p class="form__login-redirect" (click)="test()">Already have an account? <span><a
-                    routerLink="#">Sign-In</a></span></p>
+        <p class="form__login-redirect">Already have an account? <span><a routerLink="#">Sign-In</a></span></p>
     </form>
-</main>
+</div>
