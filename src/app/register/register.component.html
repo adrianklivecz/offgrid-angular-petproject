@@ -28,6 +28,7 @@
                         *required</span>
                     <span *ngIf="registerForm.get('email')?.dirty && emailValidator(registerForm.get('email'))"
                         class="required"> *please use a valid e-mail format</span>
+                    <span *ngIf="emailError" class="required"> *{{emailError}}</span>
                 </label>
             </div>
             <div class="user-details__password">
@@ -50,11 +51,13 @@
             </div>
         </div>
         <div class="form__consent">
-            <input type="checkbox" id="register-consent" name="register-consent" (change)="checkBoxHandler()" required>
-            <label for="register-consent" [ngClass]="{'required': submitted && !consentCheckBox}">
+            <input type="checkbox" id="register-consent" name="consentCheckBox" required
+                formControlName="consentCheckBox">
+            <label for="register-consent"
+                [ngClass]="submitted && registerForm.get('consentCheckBox')?.pristine ? 'required' : ''">
                 I agree to send my personal data to OffGrid.</label>
         </div>
         <button class="submit-button pointer" type="submit">Register</button>
-        <p class="form__login-redirect">Already have an account? <span><a routerLink="#">Sign-In</a></span></p>
+        <p class="form__login-redirect">Already have an account? <span><a routerLink="/login">Sign-In</a></span></p>
     </form>
 </div>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
+
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',
@@ -8,12 +10,13 @@ import { ProductService } from '../product.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  consentCheckBox: boolean = false;
   submitted: boolean = false;
+  emailError: string = '';
 
   constructor(
-    private productService: ProductService,
-    private formBuilder: FormBuilder
+    private userService: UserService,
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   registerForm = this.formBuilder.group({
@@ -22,11 +25,8 @@ export class RegisterComponent {
     lastName: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(8)]],
     verifiedPassword: ['', Validators.required],
+    consentCheckBox: [false, Validators.requiredTrue],
   });
-
-  checkBoxHandler() {
-    this.consentCheckBox = !this.consentCheckBox;
-  }
 
   onSubmit(): void {
     this.submitted = true;
@@ -35,14 +35,11 @@ export class RegisterComponent {
       return;
     }
 
-    console.log(this.submitted);
-    if (this.registerForm?.valid && this.consentCheckBox) {
-      this.productService
-        .registerUser(this.registerForm?.value)
-        .subscribe((result) =>
-          alert(`Welcome, ${result.firstName} ${result.lastName}!`)
-        );
-      this.registerForm.reset();
+    if (this.registerForm?.valid) {
+      this.userService.registerUser(this.registerForm?.value).subscribe(
+        () => this.router.navigate(['/login']),
+        (errorBody) => (this.emailError = errorBody.error)
+      );
     }
   }
 

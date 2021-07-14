@@ -53,10 +53,4 @@ export class ProductService {
     };
     return convertedProduct;
   }
-
-  registerUser(body: {}) {
-    return this.http
-      .post<any>('http://localhost:8080/customer', body)
-      .pipe(map((results) => results));
-  }
 }
