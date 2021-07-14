@@ -13,4 +13,10 @@ export class UserService {
       .post<any>('http://localhost:8080/customer', body)
       .pipe(map((results) => results));
   }
+
+  loginUser(body: {}) {
+    return this.http
+      .post<any>('http://localhost:8080/customer/login', body)
+      .pipe(map((results) => results));
+  }
 }
