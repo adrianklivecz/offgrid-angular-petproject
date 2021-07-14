@@ -1,0 +1,63 @@
+<div class="register">
+    <h1 class="register__form-title">Create Account</h1>
+    <form name="register__form" class="register__form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form__user-details">
+            <div class="user-details__first-name">
+                <input name="firstName" type="text" class="first-name" formControlName="firstName" autocomplete="off"
+                    required>
+                <label class="animation-label">First Name <span
+                        *ngIf="submitted && !registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched && registerForm.get('firstName')?.hasError('required')"
+                        class="required">
+                        *required</span>
+                </label>
+            </div>
+            <div class="user-details__last-name">
+                <input name="lastName" type="text" class="last-name" formControlName="lastName" autocomplete="off"
+                    required>
+                <label class="animation-label">Last Name <span
+                        *ngIf="submitted && !registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched && registerForm.get('lastName')?.hasError('required')"
+                        class="required">
+                        *required</span></label>
+            </div>
+            <div class="user-details__email">
+                <input name="email" type="text" class="email" formControlName="email" autocomplete="off" required>
+                <label for="email" class="animation-label">Email
+                    <span
+                        *ngIf="submitted && !registerForm.get('email')?.dirty || registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')"
+                        class="required">
+                        *required</span>
+                    <span *ngIf="registerForm.get('email')?.dirty && emailValidator(registerForm.get('email'))"
+                        class="required"> *please use a valid e-mail format</span>
+                    <span *ngIf="emailError" class="required"> *{{emailError}}</span>
+                </label>
+            </div>
+            <div class="user-details__password">
+                <input name="password" type="password" class="password" formControlName="password" required>
+                <label for="password" class="animation-label">Password <span
+                        *ngIf="submitted && !registerForm.get('password')?.dirty || registerForm.get('password')?.touched && registerForm.get('password')?.hasError('required')"
+                        class="required">
+                        *required</span>
+                    <span *ngIf="registerForm.get('password')?.errors?.minlength" class="required">
+                        *Password must be at least 8 characters long.</span>
+                </label>
+            </div>
+            <div class="user-details__verified-password">
+                <input name="verifiedPassword" type="password" class="verified-password"
+                    formControlName="verifiedPassword" required>
+                <label for="verifiedPassword" class="animation-label">Re-enter the password <span
+                        *ngIf="registerForm.get('verifiedPassword')?.dirty && registerForm.get('password')?.value !== registerForm.get('verifiedPassword')?.value"
+                        class="required">
+                        *Password mismatch</span></label>
+            </div>
+        </div>
+        <div class="form__consent">
+            <input type="checkbox" id="register-consent" name="consentCheckBox" required
+                formControlName="consentCheckBox">
+            <label for="register-consent"
+                [ngClass]="submitted && registerForm.get('consentCheckBox')?.pristine ? 'required' : ''">
+                I agree to send my personal data to OffGrid.</label>
+        </div>
+        <button class="submit-button pointer" type="submit">Register</button>
+        <p class="form__login-redirect">Already have an account? <span><a routerLink="/login">Sign-In</a></span></p>
+    </form>
+</div>

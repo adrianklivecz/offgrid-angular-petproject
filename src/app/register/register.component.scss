@@ -1,0 +1,104 @@
+@import "../variables";
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+
+  &__form-title {
+    color: $logo-color;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    max-width: 60rem;
+    width: 100%;
+
+    input {
+      height: 1.5rem;
+    }
+
+    .form__consent {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .form__user-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 25rem;
+      width: 100%;
+
+      .user-details__first-name,
+      .user-details__last-name,
+      .user-details__email,
+      .user-details__password,
+      .user-details__verified-password {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        position: relative;
+
+        .animation-label {
+          position: absolute;
+          left: 0.3rem;
+          top: 50%;
+          font-size: 0.9rem;
+          font-style: italic;
+          transform: translateY(-50%);
+          transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+          pointer-events: none;
+        }
+      }
+
+      * input:focus + label,
+      * input:valid + label {
+        top: -0.5rem;
+        font-size: 0.75rem;
+        color: grey;
+      }
+    }
+
+    .form__login-redirect {
+      font-size: 1.2rem;
+
+      span a {
+        color: $logo-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.submit-button {
+  padding: 0.5rem;
+  width: 10rem;
+  border-radius: 3px;
+  font-size: 1.25rem;
+  text-align: center;
+  background: $submit-btn-background;
+  color: $main-bg-color;
+}
+
+#register-consent {
+  width: 1.3rem;
+}
+
+.required {
+  color: red;
+}
+
+.disabled {
+  background-color: #808080;
+}
