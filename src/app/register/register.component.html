@@ -6,7 +6,7 @@
                 <input name="firstName" type="text" class="first-name" formControlName="firstName" autocomplete="off"
                     required>
                 <label class="animation-label">First Name <span
-                        *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.hasError('required')"
+                        *ngIf="submitted && !registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched && registerForm.get('firstName')?.hasError('required')"
                         class="required">
                         *required</span>
                 </label>
@@ -15,14 +15,15 @@
                 <input name="lastName" type="text" class="last-name" formControlName="lastName" autocomplete="off"
                     required>
                 <label class="animation-label">Last Name <span
-                        *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.hasError('required')"
+                        *ngIf="submitted && !registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched && registerForm.get('lastName')?.hasError('required')"
                         class="required">
                         *required</span></label>
             </div>
             <div class="user-details__email">
                 <input name="email" type="text" class="email" formControlName="email" autocomplete="off" required>
                 <label for="email" class="animation-label">Email
-                    <span *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')"
+                    <span
+                        *ngIf="submitted && !registerForm.get('email')?.dirty || registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')"
                         class="required">
                         *required</span>
                     <span *ngIf="registerForm.get('email')?.dirty && emailValidator(registerForm.get('email'))"
@@ -32,7 +33,7 @@
             <div class="user-details__password">
                 <input name="password" type="password" class="password" formControlName="password" required>
                 <label for="password" class="animation-label">Password <span
-                        *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.hasError('required')"
+                        *ngIf="submitted && !registerForm.get('password')?.dirty || registerForm.get('password')?.touched && registerForm.get('password')?.hasError('required')"
                         class="required">
                         *required</span>
                     <span *ngIf="registerForm.get('password')?.errors?.minlength" class="required">

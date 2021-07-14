@@ -29,11 +29,13 @@ export class RegisterComponent {
   }
 
   onSubmit(): void {
+    this.submitted = true;
+
     if (!this.registerForm?.valid) {
       return;
     }
 
-    this.submitted = true;
+    console.log(this.submitted);
     if (this.registerForm?.valid && this.consentCheckBox) {
       this.productService
         .registerUser(this.registerForm?.value)
