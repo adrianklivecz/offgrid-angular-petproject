@@ -16,6 +16,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchComponent } from './search/search.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SearchComponent } from './search/search.component';
     ShippingMethodComponent,
     PaymentMethodComponent,
     OrderSummaryComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

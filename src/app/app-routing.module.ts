@@ -8,11 +8,13 @@ import { DeliveryAddressComponent } from './checkout-stepper/delivery-address/de
 import { ShippingMethodComponent } from './checkout-stepper/shipping-method/shipping-method.component';
 import { PaymentMethodComponent } from './checkout-stepper/payment-method/payment-method.component';
 import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-summary.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: ProductListComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
+  { path: 'login', component: LoginComponent },
   {
     path: 'checkout',
     component: CheckoutStepperComponent,
