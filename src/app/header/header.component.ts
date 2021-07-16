@@ -6,6 +6,7 @@ import {
   faDoorOpen,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,7 @@ export class HeaderComponent implements DoCheck {
   loggedIn?: any;
   showLogoutBtn: boolean = false;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngDoCheck(): void {
     this.loggedIn = localStorage.getItem('user');
@@ -31,5 +32,7 @@ export class HeaderComponent implements DoCheck {
   logoutUserHandler() {
     this.userService.logoutUser().subscribe();
     localStorage.removeItem('user');
+    this.userService.isLoggedIn = false;
+    this.router.navigate(['/home']);
   }
 }

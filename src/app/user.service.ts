@@ -18,9 +18,11 @@ export class UserService {
       .pipe(map((results) => results));
   }
 
-  loginUser(body: User): Observable<any> {
+  loginUser(body: User) {
     return this.http
-      .post<any>('http://localhost:8080/customer/login', body, {})
+      .post<any>('http://localhost:8080/customer/login', body, {
+        observe: 'response',
+      })
       .pipe(map((results) => console.log(results)));
   }
 

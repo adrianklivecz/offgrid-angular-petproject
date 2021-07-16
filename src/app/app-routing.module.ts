@@ -10,15 +10,20 @@ import { PaymentMethodComponent } from './checkout-stepper/payment-method/paymen
 import { OrderSummaryComponent } from './checkout-stepper/order-summary/order-summary.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: ProductListComponent },
-  { path: 'product-details/:id', component: ProductDetailsComponent },
+  {
+    path: 'product-details/:id',
+    component: ProductDetailsComponent,
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {
     path: 'checkout',
+    canActivate: [AuthGuard],
     component: CheckoutStepperComponent,
     children: [
       { path: '', redirectTo: '/checkout/delivery-address', pathMatch: 'full' },
@@ -37,5 +42,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [AuthGuard],
 })
 export class AppRoutingModule {}

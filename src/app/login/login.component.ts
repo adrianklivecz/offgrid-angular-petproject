@@ -35,6 +35,7 @@ export class LoginComponent {
           console.log(res);
           console.log(typeof document.cookie);
           localStorage.setItem('user', this.loginForm.get('email')?.value);
+          this.userService.isLoggedIn = true;
           this.router.navigate(['/home']);
         },
         (error) => {
