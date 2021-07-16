@@ -1,15 +1,58 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  logIn: boolean = false;
+  incorrectCredentials: boolean = false;
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
+  loginForm = this.formBuilder.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+
+  onLogin(): void {
+    this.logIn = true;
+    if (!this.loginForm?.valid) {
+      return;
+    }
+
+    if (this.loginForm?.valid) {
+      this.userService.loginUser(this.loginForm?.value).subscribe(
+        (res) => {
+          console.log(res);
+          console.log(typeof document.cookie);
+          localStorage.setItem('user', this.loginForm.get('email')?.value);
+          this.router.navigate(['/home']);
+        },
+        (error) => {
+          if (error) this.incorrectCredentials = true;
+        }
+      );
+    }
   }
 
+  emailValidator(control: any) {
+    if (
+      control.value.match(
+        /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      )
+    ) {
+      return;
+    } else {
+      return true;
+    }
+  }
 }

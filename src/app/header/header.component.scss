@@ -38,6 +38,10 @@
   border-bottom: 2px solid #000;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Media Queries */
 /* XS screens */
 @media (max-width: 600px) {

@@ -1,13 +1,23 @@
 <div class="login">
     <h1 class="login__form-title">Welcome to OffGrid!</h1>
-    <form class="login__form">
+    <form class="login__form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div><span
+                [ngClass]="logIn && !loginForm?.dirty || loginForm?.touched && incorrectCredentials ? 'loginErrorMessage' : 'loginErrorMessage hide'">
+                *please provide the
+                correct
+                email address and password</span>
+        </div>
         <div class="form__username">
-            <label for="username">Username</label>
-            <input type="text" placeholder="Enter your email" />
+            <label for="email">Username <span
+                    *ngIf="loginForm.get('email')?.dirty && emailValidator(loginForm.get('email')) && !logIn || logIn && emailValidator(loginForm.get('email'))"
+                    class="required">
+                    *please use a valid e-mail format</span>
+            </label>
+            <input type="text" placeholder="Enter your email" name="email" formControlName="email" />
         </div>
         <div class="form__password">
             <label for="password">Password</label>
-            <input type="password" placeholder="Enter your password" />
+            <input type="password" placeholder="Enter your password" name="password" formControlName="password" />
         </div>
         <button type="submit" class="login__button">Log In</button>
         <p class="form__login-redirect">Don't have an account? <span><a routerLink="/register">Sign-up</a></span></p>
