@@ -28,7 +28,10 @@ export class UserService {
 
   logoutUser() {
     return this.http
-      .get<any>('http://localhost:8080/customer/logout')
+      .get<any>('http://localhost:8080/customer/logout', {
+        observe: 'response',
+        withCredentials: true,
+      })
       .pipe(map((results) => results));
   }
 }
