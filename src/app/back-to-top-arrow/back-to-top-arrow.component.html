@@ -1,4 +1,4 @@
-<div class="back-to-top-arrow">
+<div [ngClass]="{'back-to-top-arrow': true, 'show-arrow': windowScrolled}">
     <a (click)="toTop()">
         <fa-icon [icon]="faArrowAltCircleUp"></fa-icon>
     </a>
