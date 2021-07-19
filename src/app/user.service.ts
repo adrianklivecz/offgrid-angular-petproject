@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from './User';
 
@@ -22,13 +21,14 @@ export class UserService {
     return this.http
       .post<any>('http://localhost:8080/customer/login', body, {
         observe: 'response',
+        withCredentials: true,
       })
-      .pipe(map((results) => console.log(results)));
+      .pipe(map((results) => results));
   }
 
   logoutUser() {
     return this.http
       .get<any>('http://localhost:8080/customer/logout')
-      .pipe(map((res) => console.log(res)));
+      .pipe(map((results) => results));
   }
 }

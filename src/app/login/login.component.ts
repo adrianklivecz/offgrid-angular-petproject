@@ -31,9 +31,7 @@ export class LoginComponent {
 
     if (this.loginForm?.valid) {
       this.userService.loginUser(this.loginForm?.value).subscribe(
-        (res) => {
-          console.log(res);
-          console.log(typeof document.cookie);
+        () => {
           localStorage.setItem('user', this.loginForm.get('email')?.value);
           this.userService.isLoggedIn = true;
           this.router.navigate(['/home']);
