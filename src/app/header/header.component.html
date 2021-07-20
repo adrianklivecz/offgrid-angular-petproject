@@ -8,24 +8,25 @@
         <ul class="navbar__buttons-container">
             <li class="navbar__button"><a routerLink="/home">Home</a></li>
             <li class="navbar__button"><a routerLink="#">Orders</a></li>
-            <li class="navbar__button">
+            <li class="navbar__button" *ngIf="!loggedIn">
                 <a routerLink="/register">
-                    <fa-icon [icon]="faUserPlus"></fa-icon>
+                    <fa-icon [icon]="faUserPlus" title="Register"></fa-icon>
                 </a>
             </li>
             <li class="navbar__button">
-                <a routerLink="#">
-                    <fa-icon [icon]="faUserShield"></fa-icon>
+                <a routerLink="/login">
+                    <span *ngIf="loggedIn">{{loggedIn}}</span>
+                    <fa-icon [icon]="faSignInAlt" title="Log In" [className]="loggedIn ? 'hidden' : ''"></fa-icon>
                 </a>
             </li>
-            <li class="navbar__button">
-                <a routerLink="#">
-                    <fa-icon [icon]="faToggleOff"></fa-icon>
-                </a>
+            <li class="navbar__button" *ngIf="showLogoutBtn && loggedIn">
+                <p (click)="logoutUserHandler()">
+                    <fa-icon [icon]="faDoorOpen" title="Log Out"></fa-icon>
+                </p>
             </li>
             <li class="navbar__button">
                 <a routerLink="/checkout">
-                    <fa-icon [icon]="faShoppingCart"></fa-icon>
+                    <fa-icon [icon]="faShoppingCart" title="Shopping Cart"></fa-icon>
                 </a>
             </li>
         </ul>
