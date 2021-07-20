@@ -5,8 +5,16 @@
   bottom: 6rem;
   right: 4rem;
   font-size: 4rem;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
   a {
     color: $logo-color;
   }
+}
+
+.show-arrow {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
 }
